@@ -1,5 +1,6 @@
 package net.neocosmic.neolanguages.repository;
 
+import net.kyori.adventure.text.Component;
 import net.neocosmic.neolanguages.language.PlayerLanguage;
 
 import java.util.HashMap;
@@ -17,8 +18,8 @@ public abstract class MessagesRepository<T extends Enum<?>> {
         return messages.get(key).get(language);
     }
 
-    public String getMessage(PlayerLanguage language, T key, Object... args) {
-        return String.format(messages.get(key).get(language), args);
+    public Component getComponent(PlayerLanguage language, T key) {
+        return Component.text(getMessage(language, key));
     }
 
 }
