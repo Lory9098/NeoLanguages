@@ -15,19 +15,19 @@ public final class NeoLanguages {
     private final Database database;
 
 
-    protected NeoLanguages() {
+    protected NeoLanguages(String host, String port, String user, String password) {
         instance = this;
 
         this.database = new Database(
-                "localhost",
-                "3306",
-                "root",
-                "password"
+                host,
+                port,
+                user,
+                password
         );
     }
 
-    public static void init(JavaPlugin javaPlugin) {
-        new NeoLanguages();
+    public static void init(String host, String port, String user, String password, JavaPlugin javaPlugin) {
+        new NeoLanguages(host, port, user, password);
 
         javaPlugin.getServer().getPluginManager().registerEvents(new GeneralListener(instance), javaPlugin);
     }

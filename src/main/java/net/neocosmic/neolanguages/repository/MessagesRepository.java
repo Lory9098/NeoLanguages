@@ -7,7 +7,7 @@ import net.neocosmic.neolanguages.utils.PlayerCache;
 import java.util.HashMap;
 import java.util.UUID;
 
-//                                       // The message key enum
+//                                       The message key enum
 public abstract class MessagesRepository<T extends Enum<?>> {
 
     private final HashMap<T, HashMap<PlayerLanguage, String>> messages = new HashMap<>();
